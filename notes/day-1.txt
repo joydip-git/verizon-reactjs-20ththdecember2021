@@ -1,0 +1,89 @@
+1. Advanced topics of JS:
+	a. object creation
+	b. functions
+	c. this keyword
+	d. prototypes
+	e. callback
+	f. promise and asynchronity
+	etc.
+
+2. new features of JS:
+	a. let, const
+	b. class, constructor, extends, super etc.
+	c. spread, rest operator
+	d. string template or interpolation
+	e. arrow function
+	f. object destructuring
+	etc.
+
+3. browser application
+4. SPA (single-page app)
+5. SPA vs server side framework
+6. Node js
+
+7. React JS
+	a. what it is?
+	b. advantages
+	c. disadvantages
+	d  difference with Angular
+	e. create react app from scratch without tool
+	f. react app with tool
+	g. application artifacts: configurations, tools
+
+8. React features
+	a. components
+	b. props 
+	c. state
+	d. rendering components
+	e. VDOM
+	f. displaying lists of items
+	etc.
+
+
+any JS function when called, it enters into two phases:
+a. preparation/compilation phase: all vaiables and function declarations are hoisted (entry of them are made in the function execution context objext)
+b. execution phase
+
+JS supports JIT (Just -in time) compilation and execution
+
+1. function execution context
+   a. global function execution context (GFEC)
+	
+	1st stage: prepartion phase
+	-------------------------------------
+	a		= undefined
+	arr		= undefined
+	arr1		= undefined
+	add	------------------> function(a,b){}
+	subtract	= undefined
+
+	2nd stage: execution phase
+	-------------------------------------
+	a		= 10
+	arr		= ------------> array object [1,2,3,4]
+	arr1		= ------------> array object [1,2,3,4]
+	add	------------------> function (a,b){}
+	subtract	= --------> function (a,b){}
+
+
+	b. add function execution context (AFEC)
+	1st stage: prepartion phase
+	2nd stage: execution phase
+
+	c. subtract function execution context (SFEC)
+	1st stage: prepartion phase
+	2nd stage: execution phase
+
+hoisting:
+	a. variable (declarations are hoisted and aiisgned value "undefined", whcih are assigned to proper values in the execution phase)
+	b. function (expressions are not hoisted, declarayions are)
+
+Execution Context Stack: (ECS)
+	stack of function execution context objects
+	at the bottom global function execution context object is created and stored. this is removed if there is no other function or code to execute and always at the end
+	all other function execution context objects are created and placed at the top of GFEC object in the stack and removed as soon as the function execution is over
+
+
+
+
+
