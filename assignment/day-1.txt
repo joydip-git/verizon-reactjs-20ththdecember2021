@@ -1,0 +1,16 @@
+1. create an application
+	a. create a ctor func, which will help you to create 'developer' objects with following attributes: 
+	i. value attributes: name, id, basicpay, dapay, hrapay, incentivepay, totalsalary (do not pass total salary to the function as argument, because this will be calcuated in the calculateSalary method)
+	ii. functional attribute: calculateSalary
+		args: NONE
+		return type: void
+		logic: just add those salary attributes, calculate and assign it to the totalSalary attribute
+
+	b. create at least 2/3 object (using hard coded values)
+	c. create an array to store those objects
+
+	d. iterate through the array, pick up an object at a time and calculate the salary
+	e. iterate through the array, display the the object's name and total salary
+	f. filter the array to display only the developers with salary more than 10000
+	g. sort the array by salary of the developers (highest to lowest)
+	h. sort the developers in the array by the alphabetical order of their name
