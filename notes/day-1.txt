@@ -98,6 +98,8 @@ main(){
 	obj.Foo();
 }
 
+function Object(){}
+
 	
 
 

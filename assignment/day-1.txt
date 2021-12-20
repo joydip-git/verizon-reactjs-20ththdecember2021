@@ -6,6 +6,13 @@
 		return type: void
 		logic: just add those salary attributes, calculate and assign it to the totalSalary attribute
 
+	create a ctor func, which will help you to create 'hr' objects with following attributes: 
+	i. value attributes: name, id, basicpay, dapay, hrapay, gratuitypay, totalsalary (do not pass total salary to the function as argument, because this will be calcuated in the calculateSalary method)
+	ii. functional attribute: calculateSalary
+		args: NONE
+		return type: void
+		logic: just add those salary attributes, calculate and assign it to the totalSalary attribute
+
 	b. create at least 2/3 object (using hard coded values)
 	c. create an array to store those objects
 
