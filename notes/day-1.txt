@@ -8,7 +8,7 @@
 	etc.
 
 2. new features of JS:
-	a. let, const
+	a. let: to declare block scoped variable, const
 	b. class, constructor, extends, super etc.
 	c. spread, rest operator
 	d. string template or interpolation
@@ -66,9 +66,9 @@ JS supports JIT (Just -in time) compilation and execution
 	subtract	= --------> function (a,b){}
 
 
-	b. add function execution context (AFEC)
-	1st stage: prepartion phase
-	2nd stage: execution phase
+	b. call function execution context (AFEC)
+	1st stage: prepartion phase: (a=undefined)
+	2nd stage: execution phase (a=30)
 
 	c. subtract function execution context (SFEC)
 	1st stage: prepartion phase
