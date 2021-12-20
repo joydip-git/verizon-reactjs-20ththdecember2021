@@ -83,6 +83,21 @@ Execution Context Stack: (ECS)
 	at the bottom global function execution context object is created and stored. this is removed if there is no other function or code to execute and always at the end
 	all other function execution context objects are created and placed at the top of GFEC object in the stack and removed as soon as the function execution is over
 
+class A
+{
+	string   name;
+	public A(string name){ this.name = name}
+
+	public void Foo(){
+		int a=10
+	}
+}
+
+main(){
+	A obj = new A('joy');
+	obj.Foo();
+}
+
 
 
 
