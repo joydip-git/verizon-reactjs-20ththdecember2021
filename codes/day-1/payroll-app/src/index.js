@@ -1,50 +1,45 @@
-function employee(name, id, basic, da, hra) {
-    this.name = name
-    this.id = id
-    this.basicPay = basic
-    this.daPay = da
-    this.hraPay = hra
-    this.totalSalary = 0
+class Employee {
+    constructor(name, id, basic, da, hra) {
+        this.name = name
+        this.id = id
+        this.basicPay = basic
+        this.daPay = da
+        this.hraPay = hra
+        this.totalSalary = 0
+    }
+    //method
+    calculateSalary() {
+        this.totalSalary = this.basicPay + this.daPay + this.hraPay
+    }
 }
-employee.prototype.calculateSalary = function () {
-    this.totalSalary = this.basicPay + this.daPay + this.hraPay
-}
-
-function developer(name, id, basic, da, hra, incentive) {
-    employee.call(this, name, id, basic, da, hra)
-    this.incentivePay = incentive
-
-    this.calculateSalary = function () {
-        employee.prototype.calculateSalary.call(this)
+// console.log(Employee.prototype)
+class Developer extends Employee {
+    constructor(name, id, basic, da, hra, incentive) {
+        super(name, id, basic, da, hra)
+        this.incentivePay = incentive
+    }
+    calculateSalary() {
+        super.calculateSalary()
         this.totalSalary += this.incentivePay
     }
 }
-
-function hr(name, id, basic, da, hra, gratuity) {
-    employee.call(this, name, id, basic, da, hra)
-    this.gratuityPay = gratuity
-
-    this.calculateSalary = function () {
-        employee.prototype.calculateSalary.call(this)
+class Hr extends Employee {
+    constructor(name, id, basic, da, hra, gratuity) {
+        super(name, id, basic, da, hra)
+        this.gratuityPay = gratuity
+    }
+    calculateSalary() {
+        super.calculateSalary()
         this.totalSalary = this.totalSalary + this.gratuityPay
     }
 }
 
-// console.log(Object.prototype)
-// console.log(developer.prototype)
-// console.log(hr.prototype)
-
-// const maheshObj = new developer('mahesh', 3, 1003, 2004, 3005, 4006)
-// maheshObj.calculateSalary()
-// console.log(maheshObj.totalSalary)
-
-
 const employees = [
-    new developer('mahesh', 3, 1003, 2004, 3005, 4006),
-    new developer('sunil', 2, 1001, 2002, 3003, 4004),
-    new developer('anil', 1, 1000, 2000, 3000, 4000),
-    new hr('banu',4,1050,2050,3050,4050),
-    new hr('ramnath',5,1150,2150,3150,4150)
+    new Developer('mahesh', 3, 1003, 2004, 3005, 4006),
+    new Developer('sunil', 2, 1001, 2002, 3003, 4004),
+    new Developer('anil', 1, 1000, 2000, 3000, 4000),
+    new Hr('banu',4,1050,2050,3050,4050),
+    new Hr('ramnath',5,1150,2150,3150,4150)
 ]
 
 const salaryCallback = function (emp) {
@@ -74,4 +69,3 @@ const sortByNameCallback = function (emp1, emp2) {
 }
 //employees.sort(sortByNameCallback)
 employees.forEach(showCallback)
-
