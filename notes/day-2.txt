@@ -32,20 +32,37 @@ Node js
 		ii. system js
 
 4. transpilation concepts
-	a. transpilation
-	b. transpilers
+	a. transpilation: converting new JS version code back to older JS version code
+	b. transpilers: 
+		JS: babel
+		babel packages: 
+			core: npm i @babel/core @babel/cli -D
+			plugins:
+			@babel/plugin-transform-classes
+			@babel/plugin-transform-***
+			@babel/plugin-transform-block-scoping
+			const, let, class, super, extends, 
+
+			preset: collection of plugins
+			@babel/preset-env: to convert ES6+ features back to older version (backward-compatible) of JS
+			@babel/preset-react
+			
+		babel configuration
+		possible file names: .babelrc, .babelrc.json, babel.config.json
+	
+		TS: tsc
 
 
 5. bundling concepts
-	a. bundler 
+	a. bundler: webpack, browserify etc.
 	b. different bundlers
 	c. create dev and prod bundles
 	d. loaders
+	e. webpack configuration
 
 6. development server
-	a. different dev servers
-	b. webpack
-	c. webpack configuration
+	a. different dev servers: lite-server, webpack-dev-server
+	
 
 
 Module {
@@ -79,3 +96,51 @@ Cannot use import statement outside a module
 1. convert module format from ES6/common js/others to AMD format so that require js module loader understands and loads the modules
 2. get your JS code with latest version features converted to older version to make sure anyone using even the oldest version of any browser can visit your web site/app
 
+
+
+package managers: npm (node_modules), yarn (node_modules), bower (bower_components)
+
+
+language: JS
+application building: client-side
+
+component:
+table.html (partial/content)
+<input type='text'/>
+<table>
+</table>
+code:
+table.js
+
+table.js --> design + code (supplies data to the design and interacts with the design via events)
+
+
+add.html (partial/content)
+<form>
+	<button type='submit'>Add</button>
+</form>
+add.js
+
+view.html (partial/content)
+<form>
+</form>
+view.js
+
+
+http://..../home
+http://..../add
+http://..../view/1
+
+index.html --> single page
+<html>
+	<head>....</head>
+	<body>
+		<div id='main'>
+			<!--here goes the design-->	
+		</div>
+	</body>
+</html>
+
+
+
+SPA: bulit upon components (design/content + code)

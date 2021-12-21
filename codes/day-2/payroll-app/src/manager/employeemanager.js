@@ -8,7 +8,7 @@ export function showEmployees(showCallback) {
     employees.forEach(showCallback)
 }
 
-export function filterEmployeesBySalary() {
+export function filterEmployeesBySalary(salaryFilterCallback) {
     return employees.filter(salaryFilterCallback)
 }
 

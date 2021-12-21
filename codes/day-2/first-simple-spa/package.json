@@ -1,0 +1,22 @@
+{
+  "name": "first-simple-spa",
+  "version": "1.0.0",
+  "description": "demo SPA app",
+  "main": "index.js",
+  "scripts": {
+    "compile":"babel src --out-dir dist",
+    "load":"lite-server"
+  },
+  "keywords": [
+    "SPA"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-transform-modules-amd": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "lite-server": "^2.6.1"
+  }
+}

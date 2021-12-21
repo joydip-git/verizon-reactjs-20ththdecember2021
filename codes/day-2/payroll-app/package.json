@@ -1,0 +1,23 @@
+{
+  "name": "payroll-app",
+  "version": "1.0.0",
+  "description": "simple payroll app",
+  "scripts": {
+    "load": "lite-server",
+    "compile": "babel src --out-dir dist"
+  },
+  "keywords": [
+    "module",
+    "js",
+    "class"
+  ],
+  "author": "joydip",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.5",
+    "@babel/plugin-transform-modules-amd": "^7.16.5",
+    "@babel/preset-env": "^7.16.5",
+    "lite-server": "^2.6.1"
+  }
+}
