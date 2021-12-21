@@ -1,0 +1,2 @@
+1. promise and asynchronity
+2. arrow function, rest and spread operator, object destructuring
