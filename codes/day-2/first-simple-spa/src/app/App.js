@@ -1,6 +1,6 @@
 import { Welcome } from "../welcome/Welcome";
 import { Introduction } from "../introduction/Introduction";
-import React from "react";
+//import React from "react";
 
 /*
 //app component (root)
@@ -17,6 +17,7 @@ export function app() {
     return appDiv
 }
 */
+/*
 export function App() {
 
     const welcomeReactElement = Welcome()
@@ -28,5 +29,23 @@ export function App() {
         [welcomeReactElement, React.createElement('br'), introReactElement]
     )
     
+    return appReactDivElement
+}
+*/
+export function App() {
+
+    // const welcomeReactElement = Welcome()
+    // const introReactElement = Introduction()
+
+    const appReactDivElement = (
+        <div id='appDiv'>
+            {/* {welcomeReactElement} */}
+            <Welcome />
+            <br />
+            {/* {introReactElement} */}
+            <Introduction />
+        </div>
+    )
+
     return appReactDivElement
 }

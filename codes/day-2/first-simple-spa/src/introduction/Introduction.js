@@ -14,7 +14,7 @@ export function introduction() {
 }
 */
 
-import React from 'react'
+//import React from 'react'
 
 //introduction function is known as component function
 export function Introduction() {
@@ -23,7 +23,9 @@ export function Introduction() {
     const introMessage = 'React JS is a UI library, NOT a framework like Angular'
 
     //design and appending the data in the design
-    const introReactDivElement = React.createElement('div', { id: 'welcomeDiv' }, introMessage)
-    
+    // const introReactDivElement = React.createElement('div', { id: 'introDiv' }, introMessage)
+
+    const introReactDivElement = <div id='introDiv'>{introMessage}</div>
+
     return introReactDivElement
 }

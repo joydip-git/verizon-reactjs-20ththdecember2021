@@ -20,20 +20,28 @@ export function welcome() {
 }
 */
 
-import React from "react"
+//import React from "react"
 
 //welcome function is known as component function
 export function Welcome() {
 
     //data
-    const welcomeMessage = 'Welcome to React JS'
+    let welcomeMessage = 'Welcome to React JS'
     //event handling code
     const welcomeCallback = function () {
-        window.alert('entered the div')
+        //window.alert('entered the div')
+        welcomeMessage = 'Say Hi to React JS'
     }
 
     //design: appending the data in the design and passing the callback to respond to UI event
-    const welcomeReactDivElement = React.createElement('div', { id: 'welcomeDiv', onClick: welcomeCallback }, welcomeMessage)
+    // const welcomeReactDivElement = React.createElement('div', { id: 'welcomeDiv', onClick: welcomeCallback }, welcomeMessage)
+
+    //JSX --> JavaScript XML
+    const welcomeReactDivElement = (
+        <div id='welcomeDiv' onClick={welcomeCallback}>
+            {welcomeMessage}
+        </div>
+    )
 
     return welcomeReactDivElement
 }

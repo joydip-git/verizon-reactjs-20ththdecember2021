@@ -144,3 +144,13 @@ index.html --> single page
 
 
 SPA: bulit upon components (design/content + code)
+
+Angular:
+MV - C/VM
+
+React (view layer)
+1. create reusable components
+2. fast performance
+3. to build simple to large application UI layer
+4. one way data flow
+

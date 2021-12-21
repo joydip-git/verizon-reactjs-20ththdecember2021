@@ -17,6 +17,7 @@
     "@babel/core": "^7.16.5",
     "@babel/plugin-transform-modules-amd": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
+    "@babel/preset-react": "^7.16.5",
     "lite-server": "^2.6.1"
   },
   "dependencies": {

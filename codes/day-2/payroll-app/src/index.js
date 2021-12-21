@@ -1,6 +1,8 @@
 //const managerModuleExports = require('./manager/employeemanager')
 import * as managerModuleExports from "./manager/employeemanager";
 
+const btn = document.getElementById('btnClick')
+btn.addEventListener('click', call)
 function call() {
     window.alert('called')
 }
