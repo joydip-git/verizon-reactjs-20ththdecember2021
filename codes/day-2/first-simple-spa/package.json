@@ -4,8 +4,8 @@
   "description": "demo SPA app",
   "main": "index.js",
   "scripts": {
-    "compile":"babel src --out-dir dist",
-    "load":"lite-server"
+    "compile": "babel src --out-dir dist",
+    "load": "lite-server"
   },
   "keywords": [
     "SPA"
@@ -18,5 +18,9 @@
     "@babel/plugin-transform-modules-amd": "^7.16.5",
     "@babel/preset-env": "^7.16.5",
     "lite-server": "^2.6.1"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   }
 }
