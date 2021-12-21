@@ -1,29 +1,21 @@
-const employees = require('../repository/employees')
+import employees from '../repository/employees'
 
-function calculateSalaryOfEmployees(salaryCallback) {
+export function calculateSalaryOfEmployees(salaryCallback) {
     employees.forEach(salaryCallback)
 }
 
-function showEmployees(showCallback) {
+export function showEmployees(showCallback) {
     employees.forEach(showCallback)
 }
 
-function filterEmployeesBySalary() {
+export function filterEmployeesBySalary() {
     return employees.filter(salaryFilterCallback)
 }
 
-function sortEmployeesByName(sortByNameCallback) {
+export function sortEmployeesByName(sortByNameCallback) {
     return employees.sort(sortByNameCallback)
 }
 
-function sortEmployeesBySalary(sortBySalaryCallback) {
+export function sortEmployeesBySalary(sortBySalaryCallback) {
     return employees.sort(sortBySalaryCallback)
-}
-
-module.exports={
-    calculateSalaryOfEmployees,
-    showEmployees,
-    filterEmployeesBySalary,
-    sortEmployeesByName,
-    sortEmployeesBySalary
 }

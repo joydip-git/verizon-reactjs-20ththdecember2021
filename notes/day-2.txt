@@ -14,23 +14,34 @@ Node js
 		ii. ES6 format:
 			exporting: export member1
 			import: import {member1} from 'module-name with relative path'
-		note: in node js you can use it, but Node by default does not support it. hence you require module lodaer which understands ES6 module format
+		note: in node js you can use it, but Node by default does not support it. hence you require module loader which understands ES6 module format
 
 		iii. Asynchronous Module Format(AMD):
+		if you are using require js as module loader for browser application, then choose this module format to create your modular code, since require js expects the modules should be written in AMD format
 		iv.  Universal Module Definition (UMD) format
 
 
 	c. module loader:
 		which interprets different module import export format and accordingly resolves the dependencies between modules
+		note: 
+		Node JS runtime has a module loader whoch understands the common js format.
+		Browser does not support modular code and do not have any module loader s/w
+		soln: supply module loader s/w to the browser
+
+		i. require js
+		ii. system js
 
 4. transpilation concepts
 	a. transpilation
 	b. transpilers
+
+
 5. bundling concepts
 	a. bundler 
 	b. different bundlers
 	c. create dev and prod bundles
 	d. loaders
+
 6. development server
 	a. different dev servers
 	b. webpack
@@ -54,4 +65,17 @@ paths: [
     'E:\\node_modules'
   ]
 }
+
+with common js require method:
+require is not defined at index.js:1
+
+modules not being in th AMD format:
+Module name "manager/employeemanager" has not been loaded yet for context: _. Use require([])
+
+with ES6 import statement:
+Cannot use import statement outside a module
+
+
+1. convert module format from ES6/common js/others to AMD format so that require js module loader understands and loads the modules
+2. get your JS code with latest version features converted to older version to make sure anyone using even the oldest version of any browser can visit your web site/app
 

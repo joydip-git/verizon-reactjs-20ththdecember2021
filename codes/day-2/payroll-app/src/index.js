@@ -1,4 +1,5 @@
-const managerModuleExports = require('./manager/employeemanager')
+//const managerModuleExports = require('./manager/employeemanager')
+import * as managerModuleExports from "./manager/employeemanager";
 
 function call() {
     window.alert('called')

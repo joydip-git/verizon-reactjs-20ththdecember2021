@@ -1,6 +1,6 @@
-const employeeModuleExports = require('./employee')
+import { Employee } from "./employee";
 
-class Hr extends employeeModuleExports.Employee {
+export class Hr extends Employee {
     constructor(name, id, basic, da, hra, gratuity) {
         super(name, id, basic, da, hra)
         this.gratuityPay = gratuity
@@ -9,9 +9,4 @@ class Hr extends employeeModuleExports.Employee {
         super.calculateSalary()
         this.totalSalary = this.totalSalary + this.gratuityPay
     }
-}
-
-
-module.exports={
-    Hr
 }
