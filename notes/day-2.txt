@@ -154,3 +154,15 @@ React (view layer)
 3. to build simple to large application UI layer
 4. one way data flow
 
+1. do not want to supply module loader manually
+2. do not want to link main/entry file in the dist folder
+3. do not want to do manual transpilation by running the script
+4. want to create dev/prod build
+	a. all js files first should be transpiled and then all transpiled code should be placed into single bundle file 
+	b. the dev/prod build folder should also contain the HTML file
+5. also the required react packages also be part of the dev/prod folder
+
+6. i want to replace the lite-server (dev-level server) by something more powerful dev server (optional)
+
+create-react-app
+
