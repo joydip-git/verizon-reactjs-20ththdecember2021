@@ -6,4 +6,33 @@
 	b. how to maintain state of data in one component (state)
 	c. class component
 	d. functional vs. class component
+
+
+class Component{
+  constructor(){
+     this.state={}
+  }
+   setState(newStateObj){
+    const updatedState = await updateState()
+    this.state=merged
+    this.render()
+   }
+
+    async updateState(newStateObj){
+      const merged={
+      ...this.state,
+      newStateObj
+	}
+     return merged;
+   }
+}
+
+class Calculator extends Component{
+    ctor(){
+     super()
+     this.state={fv:0, sv:0}
+    }
+
+    updateValues=()=>{ this.setState({fv:10}}
+}
 	
