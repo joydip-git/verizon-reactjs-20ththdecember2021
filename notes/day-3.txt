@@ -1,2 +1,9 @@
 1. promise and asynchronity
 2. arrow function, rest and spread operator, object destructuring
+
+3. React JS:
+	a. how to pass data from one to another component (props)
+	b. how to maintain state of data in one component (state)
+	c. class component
+	d. functional vs. class component
+	
