@@ -1,0 +1,16 @@
+create a react app, which....
+	displays the following details of every product in a component:
+	column			property of product
+	-----------------------------------------------
+	1			imageUrl
+	2			productName
+	3			price
+	4			starRating
+	5			[delete] button
+
+
+	put the sample data in separate file
+	export const products=[.........]
+
+	import the same in the component:
+	import {products} from 'module-name'
