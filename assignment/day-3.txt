@@ -1,5 +1,5 @@
 create a react app, which....
-	displays the following details of every product in a component:
+	displays the following details of every product in a component through a <table> element:
 	column			property of product
 	-----------------------------------------------
 	1			imageUrl
