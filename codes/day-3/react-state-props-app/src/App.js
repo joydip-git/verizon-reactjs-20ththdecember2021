@@ -1,10 +1,12 @@
 import './App.css';
-import Calculator from './Calculator';
+//import Calculator from './Calculator';
+import Value from './Value';
 
 function App() {
   return (
     <div className="App">
-      <Calculator />
+      {/* <Calculator /> */}
+      <Value />
     </div>
   );
 }
@@ -13,5 +15,5 @@ export default App;
 /**
  * Calculator()
  * 
- * new Calculator().render()
+ * new Value().render()
  */
