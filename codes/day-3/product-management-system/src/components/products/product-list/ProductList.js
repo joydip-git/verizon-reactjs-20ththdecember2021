@@ -13,7 +13,9 @@ export default class ProductList extends Component {
         return (
             <div className="panel panel-prinary">
                 <div className="panel panel-heading">
-                    <h4>{this.state.records.length} Record(s) found...</h4>
+                    <h4>
+                        {this.state.records.length} Record(s) found..
+                    </h4>
                 </div>
                 <div className="panel panel-body">
                     <div className="table-responsive">
