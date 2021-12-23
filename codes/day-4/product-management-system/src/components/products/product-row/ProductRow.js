@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-function ProductRow({ product }) {
+function ProductRow({ product, selectHandler }) {
     const imgStyle = {
         margin: '2px',
         width: '50px'
@@ -15,6 +15,11 @@ function ProductRow({ product }) {
                         alt="NA"
                         style={imgStyle}
                         title={product.productName}
+                        onClick={
+                            () => {
+                                selectHandler(product.productId)
+                            }
+                        }
                     />
                 </div>
 
@@ -29,6 +34,7 @@ function ProductRow({ product }) {
     )
 }
 ProductRow.propTypes = {
-    product: PropTypes.object.isRequired
+    product: PropTypes.object.isRequired,
+    selectHandler: PropTypes.func.isRequired
 }
 export default ProductRow
