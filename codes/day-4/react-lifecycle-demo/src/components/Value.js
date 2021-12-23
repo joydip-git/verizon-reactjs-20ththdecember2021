@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { memo } from 'react'
 import PropTypes from 'prop-types'
 
 const Value = ({ valueData, valueHandler }) => {
@@ -17,4 +17,4 @@ Value.propTypes = {
     valueHandler: PropTypes.func.isRequired
 }
 
-export default Value
+export default memo(Value)

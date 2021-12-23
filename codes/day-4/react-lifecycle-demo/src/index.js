@@ -3,10 +3,17 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import ErrorBoundary from './components/ErrorBoundary';
+
+// const logError = (errorObject) => {
+//   console.log(errorObject)
+// }
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <ErrorBoundary errorLogger={logError}> */}
+      <App />
+    {/* </ErrorBoundary> */}
   </React.StrictMode>,
   document.getElementById('root')
 );

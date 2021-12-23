@@ -17,23 +17,26 @@ class component: as class component object is created
 		B. receive props object (very first time)
 		c. bind the class methods to the current instance (bind())
 		
-	b. render: 
+	b. render: does return the react element
 		i. called after ctor, (very first time) and 
 		ii. everytime afterwards, when the component object's state data is updated or the component object receives fresh property (this.props is reset) values from parent component
 	
-	c. componentDidMount: this happens when the class component related react elements are translated into actual HTML elements and inserted (very first time and only one time, until it is dismounted) into actual dom tree. this happens ONLY one time, untill and unless it is dismounted from actula DOM tree and inserted once again
+	c. componentDidMount: this happens when the class component related react elements are translated into actual HTML elements and inserted (very first time and only one time, until it is dismounted) into actual dom tree. this happens ONLY one time, untill and unless it is dismounted from actula DOM tree and inserted once again. does not return anything
 
 2. updation: might happen due to either state of the component has been updated internally or the component has received fresh props data from parent or just the parent has been re-rendered
 
-	a. shouldComponentUpdate: 
+	a. shouldComponentUpdate: must return a boolean value
 		i. happens from 2nd cycle onwards (not the very first time when class component object is created, rendered and mounted). 
 		ii. returns boolean. if returns false, the render() method will not be called
 		iii. can be used to stop unnecessary rendering of a component in case though it did not receive any new props data from parent, but unfortunaltely since the parent is re-rendering, hence forcefully, this component is also getting re-renderd.
 
 	b. render
-	c. componentDidUpdate: 
+	c. componentDidUpdate: does not return anything
 
-3. error
+
+3. error:
+	a. static getDerivedStateFromError(errorInfo). must return a new state object
+	b. componentDidCatch(errorInfo, stackTrace). does not return anything
 
 4. destruction/unmounting: this happens when the ADOM part of the class component (represented by the react elements of the class component) is removed from the actual DOM tree
 
@@ -46,5 +49,9 @@ b. if a default ctor has been written
 	ii. 2nd cycle onwards:
 		A. if shouldComponentUpdate() is NOT written, then directly this.props gets reassigned by the React to the new props object
 		B. if shouldComponentUpdate() is written, then that new props will NOT be assigned to this.props first, rather will be passed as an argument (1st) to this method. If the method returns true, then only this.props is updated, otherwise not. Meanining: since the component did not receive any new props object this.props does not required any updation as well as render() is also not called, since Actual DOm does not need any updation
+
+
+Highre Order Component (memo(), forwardRef())
+HOC
 
 

@@ -62,6 +62,6 @@ export default class Name extends Component {
         }
     }
     componentWillUnmount(){
-        
+        console.log('[Name] unmounted')
     }
 }

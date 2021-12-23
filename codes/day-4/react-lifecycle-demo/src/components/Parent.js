@@ -14,7 +14,8 @@ export default class Parent extends Component {
             salary: 1000
         },
         nameValue: '',
-        numberValue: 0
+        numberValue: 0,
+        show: true
     }
     nameValueHandler = (newName) => {
         this.setState({
@@ -35,10 +36,29 @@ export default class Parent extends Component {
     }
     render() {
         console.log('[Parent] rendered')
-        const { nameValue, numberValue, person } = this.state
+        const { nameValue, numberValue, person, show } = this.state
         return (
             <div>
-                <Name nameData={nameValue} nameHandler={this.nameValueHandler} personData={person} />
+                <button onClick={
+                    () => {
+                        this.setState(
+                            (ps) => {
+                                return {
+                                    show: !ps.show
+                                }
+                            }
+                        )
+                    }
+                }>
+                    {
+                        show ? 'Hide' : 'Show'
+                    }
+                </button>
+                <br/>
+                <br/>
+                {
+                    show && <Name nameData={nameValue} nameHandler={this.nameValueHandler} personData={person} />
+                }
 
                 <br />
                 <br />
