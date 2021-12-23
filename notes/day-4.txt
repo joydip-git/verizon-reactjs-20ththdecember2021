@@ -1,0 +1,4 @@
+1. lifecycle of component
+2. ref and DOM
+3. forms
+4. data access 
