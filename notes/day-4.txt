@@ -55,3 +55,22 @@ Highre Order Component (memo(), forwardRef())
 HOC
 
 
+
+METHOD		URL					Return Data
+-----------------------------------------------------------------------------------------------------
+GET	http://127.0.0.1:8081/products		array of product objects
+GET	http://127.0.0.1:8081/products/{id}	a single product object
+
+DELETE  http://127.0.0.1:8081/products/{id}	delete a single product object, returns a response 
+						{ message:'', data: array of product objects}
+
+POST	http://127.0.0.1:8081/products		add a single product object, returns a response 
+						{ message:'', data: array of product objects}
+{
+  "productName":"", .....
+}
+
+PUT	http://127.0.0.1:8081/products		update a single product object, returns a response 
+						{ message:'', data: array of product objects}
+
+
