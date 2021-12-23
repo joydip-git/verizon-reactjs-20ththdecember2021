@@ -27,11 +27,11 @@ export default class ProductList extends Component {
                 <div className="panel panel-prinary">
                     <div className="panel panel-heading">
                         <h4>
-                            {this.state.records.length} Record(s) found..
+                            {records.length} Record(s) found..
                         </h4>
                     </div>
                     {
-                        this.state.records.length > 0 &&
+                        records.length > 0 &&
                         (
                             <div className="panel panel-body">
                                 <div className="table-responsive">
@@ -47,7 +47,7 @@ export default class ProductList extends Component {
                                         </thead>
                                         <tbody>
                                             {
-                                                this.state.records.map(
+                                                records.map(
                                                     (p) => {
                                                         return <ProductRow product={p} key={p.productId} />
                                                     }
@@ -67,6 +67,8 @@ export default class ProductList extends Component {
     }
 
     componentDidMount() {
+
+        // setTimeout(() => {
         getProducts()
             .then(
                 (resp) => {
@@ -84,5 +86,6 @@ export default class ProductList extends Component {
                     })
                 }
             )
+        // }, 2000)
     }
 }
