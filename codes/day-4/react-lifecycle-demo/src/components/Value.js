@@ -2,6 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 const Value = ({ valueData, valueHandler }) => {
+    console.log('[Value] rendered')
     return (
         <div>
             Value:&nbsp;{valueData}

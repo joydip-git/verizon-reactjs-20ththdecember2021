@@ -2,3 +2,20 @@
 2. ref and DOM
 3. forms
 4. data access 
+5. fragment
+6. hoc
+7. hooks
+
+Lifecycle of class component:
+functional components: do not have lifecycle
+
+class component: as class component object is created
+
+1. mounting
+
+2. updation
+
+3. error
+
+4. destruction
+
