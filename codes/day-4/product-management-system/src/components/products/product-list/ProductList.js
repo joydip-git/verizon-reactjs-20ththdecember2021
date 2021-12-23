@@ -67,7 +67,6 @@ export default class ProductList extends Component {
     }
 
     componentDidMount() {
-
         // setTimeout(() => {
         getProducts()
             .then(
