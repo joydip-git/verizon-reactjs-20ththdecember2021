@@ -1,5 +1,6 @@
 const { createStore, applyMiddleware, combineReducers } = require('redux')
 const { createLogger } = require('redux-logger')
+const thunk = require('redux-thunk')
 const Axios = require('axios')
 //state
 const initialProductListState = {
@@ -119,33 +120,47 @@ const rootReducer = combineReducers({
 })
 
 const loggerMiddleware = createLogger()
+const thunkMiddleware = thunk.default
 const store = createStore(
     rootReducer,
-    applyMiddleware(loggerMiddleware)
+    applyMiddleware(loggerMiddleware, thunkMiddleware)
 )
 
 //component code
-Axios.get('http://127.0.0.1:8081/products')
-    .then(
-        (resp) => {
-            const successAction = fetcProductsSuccessActionCreator(resp.data)
-            store.dispatch(successAction)
-        },
-        (err) => {
-            const failureAction = fetcProductsFailureActionCreator(err.message)
-            store.dispatch(failureAction)
-        }
-    )
+const fetchProductsCallbackCreator = () => {
+    return (dispatch) => {
+        Axios.get('http://127.0.0.1:8081/products')
+            .then(
+                (resp) => {
+                    const successAction = fetcProductsSuccessActionCreator(resp.data)
+                    dispatch(successAction)
+                },
+                (err) => {
+                    const failureAction = fetcProductsFailureActionCreator(err.message)
+                    dispatch(failureAction)
+                }
+            )
+    }
+}
 
 //component code
-Axios.get('http://127.0.0.1:8081/products/1')
-    .then(
-        (resp) => {
-            const successAction = fetcProductByIdSuccessActionCreator(resp.data)
-            store.dispatch(successAction)
-        },
-        (err) => {
-            const failureAction = fetcProductByIdFailureActionCreator(err.message)
-            store.dispatch(failureAction)
-        }
-    ) 
+const fetchProductByIdCallbackCreator = (id) => {
+    return (dispatch) => {
+        Axios.get('http://127.0.0.1:8081/products/' + id)
+            .then(
+                (resp) => {
+                    const successAction = fetcProductByIdSuccessActionCreator(resp.data)
+                    dispatch(successAction)
+                },
+                (err) => {
+                    const failureAction = fetcProductByIdFailureActionCreator(err.message)
+                    dispatch(failureAction)
+                }
+            )
+    }
+}
+
+const fetchProductByIdCallback = fetchProductByIdCallbackCreator(1)
+const fetchProductsCallback = fetchProductsCallbackCreator()
+store.dispatch(fetchProductsCallback)
+store.dispatch(fetchProductByIdCallback)
