@@ -1,10 +1,10 @@
 import './App.css';
-import ProductList from './components/products/product-list/ProductList';
+import DashBoard from './components/common/dashboard/DashBoard';
 
 function App() {
   return (
     <div>
-      Welcome To Product Management System
+      <DashBoard />
     </div>
   );
 }
