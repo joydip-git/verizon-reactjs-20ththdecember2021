@@ -1,39 +1,56 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { getProduct } from '../../../services/productService'
+import { useSelector, useDispatch } from "react-redux";
+import { fetchProductByIdCallbackCreator } from '../../../redux/callbackcreators'
 
 const ViewProduct = () => {
     const params = useParams()
 
-    const [productState, setProductState] = useState({
-        loading: true,
-        errorMessage: '',
-        productInfo: undefined
-    })
+    // const [productState, setProductState] = useState({
+    //     loading: true,
+    //     errorMessage: '',
+    //     productInfo: undefined
+    // })
+
+    const loading = useSelector(
+        (stateMap) => stateMap.singleProductState.loading
+    )
+    const errorMessage = useSelector(
+        (stateMap) => stateMap.singleProductState.errorMessage
+    )
+    const productInfo = useSelector(
+        (stateMap) => stateMap.singleProductState.productInfo
+    )
+
+    const dispatchFnRef = useDispatch()
+
     useEffect(
         () => {
-            getProduct(parseInt(params.id))
-                .then(
-                    (resp) => {
-                        setProductState({
-                            loading: false,
-                            errorMessage: '',
-                            productInfo: resp.data
-                        })
-                    },
-                    (err) => {
-                        console.log(err.message)
-                        setProductState({
-                            loading: false,
-                            errorMessage: err.message,
-                            productInfo: undefined
-                        })
-                    }
-                )
+            const fetchProductByIdCallback = fetchProductByIdCallbackCreator(parseInt(params.id))
+            dispatchFnRef(fetchProductByIdCallback)
+            // getProduct(parseInt(params.id))
+            //     .then(
+            //         (resp) => {
+            //             setProductState({
+            //                 loading: false,
+            //                 errorMessage: '',
+            //                 productInfo: resp.data
+            //             })
+            //         },
+            //         (err) => {
+            //             console.log(err.message)
+            //             setProductState({
+            //                 loading: false,
+            //                 errorMessage: err.message,
+            //                 productInfo: undefined
+            //             })
+            //         }
+            //     )
         },
         [params.id]
     )
-    const { loading, errorMessage, productInfo } = productState
+    //const { loading, errorMessage, productInfo } = productState
     let design;
     if (loading) {
         design = <span>Loading</span>
