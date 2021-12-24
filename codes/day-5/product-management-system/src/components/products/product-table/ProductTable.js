@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ProductRow from '../product-row/ProductRow'
 
-const ProductTable = ({ products, selectProductIdHandler }) => {
+const ProductTable = ({ products}) => {
     const headerStyle = { backgroundColor: 'burlywood' }
     return (
         <div className="table-responsive">
@@ -20,7 +20,7 @@ const ProductTable = ({ products, selectProductIdHandler }) => {
                     {
                         products.map(
                             (p) => {
-                                return <ProductRow product={p} key={p.productId} selectHandler={selectProductIdHandler} />
+                                return <ProductRow product={p} key={p.productId} />
                             }
                         )
                     }
@@ -31,8 +31,7 @@ const ProductTable = ({ products, selectProductIdHandler }) => {
 }
 
 ProductTable.propTypes = {
-    products: PropTypes.array.isRequired,
-    selectProductIdHandler: PropTypes.func.isRequired
+    products: PropTypes.array.isRequired
 }
 
 export default ProductTable

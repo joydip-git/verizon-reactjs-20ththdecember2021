@@ -175,5 +175,9 @@ export default class UpdateProduct extends PureComponent {
                 }
             )
     }
+
+    componentWillUnmount() {
+
+    }
 }
 

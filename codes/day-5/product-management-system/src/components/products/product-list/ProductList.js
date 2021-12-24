@@ -7,14 +7,7 @@ export default class ProductList extends Component {
     state = {
         records: [],
         fetchStatus: false,
-        errorMessage: '',
-        selectedProductId: 0
-    }
-
-    selectProductIdHandler = (id) => {
-        this.setState({
-            selectedProductId: id
-        })
+        errorMessage: ''
     }
 
     deleteProductHandler = () => {
@@ -45,8 +38,7 @@ export default class ProductList extends Component {
                             (
                                 <div className="panel panel-body">
                                     <ProductTable
-                                        products={records}
-                                        selectProductIdHandler={this.selectProductIdHandler} />
+                                        products={records} />
                                 </div>
                             )
                         }
