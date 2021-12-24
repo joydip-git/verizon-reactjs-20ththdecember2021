@@ -22,3 +22,57 @@ http://localhost:3000/product/update/{id} ---> UpdateProduct (will fetch the id 
 
 when you want to add a new product
 http://localhost:3000/product/add ---> AddProduct (after add the values, click the submit buton and the record will be submitted after confirmation and user will be redirected to the product list component, where user can view the newly added product in the table)
+
+anything else apart from the above mentioned routes, will result into page not found
+
+
+Routing:
+------------------------------------------
+router engine: BrowserRouter, HashRouter, and MemoryRouter
+	a. register your routes
+	b. engine will look for route change in the browser, fetch the route, match with existing registered routes and accordingly display a component
+
+route:
+	define a route path
+	mention which component will be dispplayed when the route is used
+
+react-router and react-router-dom
+
+HashRouter
+http://.../#/products
+
+BrowserRouter
+HTML5
+	pushState API
+
+http://.../products
+	history
+	location
+	match
+
+MemoryRouter:
+React Native
+and React Testing
+
+
+<Router>
+        <Routes> 
+
+	  <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/products' element={<ProductList />} />
+          <Route path='/product/:id' element={<ViewProduct />} />
+          <Route path='/product/update/:id' element={<UpdateProduct />} />
+          <Route path='/product/add' element={<AddProduct />} />
+          <Route path='*' element={<PageNotFound />} />
+
+	</Routes>
+</Router>
+
+
+
+
+
+
+
+

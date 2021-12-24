@@ -1,24 +1,29 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 const DashBoard = () => {
     return (
-        <Fragment x={10}>
+        <Fragment>
             <h1>Product Management System</h1>
             <nav className="navbar navbar-default">
 
-                <button type="button" className="btn btn-group">
-                    Home
-                </button>
+                <Link to='/home'>
+                    <button type="button" className="btn btn-group">
+                        Home
+                    </button>
+                </Link>
 
+                <Link to='/products'>
+                    <button type="button" className="btn btn-group">
+                        Products
+                    </button>
+                </Link>
 
-                <button type="button" className="btn btn-group">
-                    Products
-                </button>
-
-
-                <button type="button" className="btn btn-group">
-                    Add Product
-                </button>
+                <Link to='/product/add'>
+                    <button type="button" className="btn btn-group">
+                        Add Product
+                    </button>
+                </Link>
 
             </nav>
         </Fragment>
@@ -28,6 +33,10 @@ const DashBoard = () => {
 export default DashBoard
 
 // const Frag = (props) => {
-   
+
 //     return this.props.children
+// }
+
+// const link = ({ to, children }) => {
+//     return <a href={to} onClick={(e) => e.preventDefault()}>{children}</a>
 // }

@@ -3,7 +3,7 @@ import React from 'react'
 const ViewProduct = () => {
     return (
         <div className='panel panel-primary' >
-
+            View Product
             <div className='panel-heading' style={{ fontSize: 'large' }}>
 
                 Details of: &nbsp;&nbsp;
