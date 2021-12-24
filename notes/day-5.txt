@@ -1,0 +1,24 @@
+1. routing
+2. redux
+3. hoc
+4. validation (ref and DOM)
+5. hooks
+
+the appliaction will contain a dashboard, containing three buttons for navigation:
+Home (to navigate to the home component)
+Products (to navigate to the product list component)
+Add Product (to navigate to the add product component)
+
+http://localhost:3000/     ---> Home component
+http://localhost:3000/home ---> Home 
+
+http://localhost:3000/products ---> ProductList
+
+when you click on any image in any row:
+http://localhost:3000/product/{id} ---> ViewProduct (will fetch the id from the request and fetch the corresponding product detail and display the same. upon clicking the OK button on the component, user will be redirected to the product list)
+
+when you click the name of product in any row
+http://localhost:3000/product/update/{id} ---> UpdateProduct (will fetch the id from the request and fetch the corresponding product detail and display the same. after updating the values, click the submit buton and the record will be submitted after confirmation and user will be redirected to the product list component, where user can view the updated product in the table)
+
+when you want to add a new product
+http://localhost:3000/product/add ---> AddProduct (after add the values, click the submit buton and the record will be submitted after confirmation and user will be redirected to the product list component, where user can view the newly added product in the table)
