@@ -1,25 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import { Component, createContext } from 'react';
 
-function App() {
+const ThemedContext = createContext('white')
+
+class App extends Component {
+  render() {
+    return (
+      <ThemedContext.Provider value='yellow'>
+        <Toolbar />;
+      </ThemedContext.Provider>
+    )
+  }
+}
+function Toolbar(props) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <ThemedButton />
+      <br />
+      <br />
+      <OtherButton />
     </div>
   );
+}
+
+class ThemedButton extends Component {
+  static contextType = ThemedContext
+  render() {
+    return (
+      <button style={{ backgroundColor: this.context }}>
+        Themed Button
+      </button>
+    );
+  }
+}
+
+function OtherButton(props) {
+  return (
+    <ThemedContext.Consumer>
+      {
+        (value) =>
+          <button style={{ backgroundColor: value }}>Other Button</button>
+      }
+    </ThemedContext.Consumer>
+  )
 }
 
 export default App;

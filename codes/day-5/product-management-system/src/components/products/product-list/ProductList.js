@@ -30,7 +30,7 @@ class ProductList extends Component {
         } else {
             design = (
                 <div className='container'>
-                    <div className="panel panel-prinary">
+                    <div className="panel panel-primary">
                         <div className="panel panel-heading">
                             <h4>
                                 {records.length} Record(s) found..
